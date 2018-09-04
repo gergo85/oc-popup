@@ -1,0 +1,65 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    campaign:
+        label: indikator.popup::lang.form.campaign
+        type: dropdown
+        required: true
+
+tabs:
+    fields:
+
+        result:
+            tab: indikator.popup::lang.form.result
+            label: ''
+            type: richeditor
+            size: huge
+
+        theme_label:
+            tab: indikator.popup::lang.form.abtest
+            label: indikator.popup::lang.form.theme_label
+            type: section
+
+        theme_a:
+            tab: indikator.popup::lang.form.abtest
+            label: indikator.popup::lang.form.theme_a
+            type: dropdown
+            default: 0
+            span: auto
+
+        theme_b:
+            tab: indikator.popup::lang.form.abtest
+            label: indikator.popup::lang.form.theme_b
+            type: dropdown
+            default: 0
+            span: auto
+
+        code_label:
+            tab: indikator.popup::lang.form.abtest
+            label: indikator.popup::lang.form.code_label
+            type: section
+
+        code_a:
+            tab: indikator.popup::lang.form.abtest
+            label: indikator.popup::lang.form.code_a
+            span: auto
+
+        code_b:
+            tab: indikator.popup::lang.form.abtest
+            label: indikator.popup::lang.form.code_b
+            span: auto
+
+secondaryTabs:
+    fields:
+
+        status:
+            label: indikator.popup::lang.form.status
+            required: true
+            type: radio
+            options:
+                1: indikator.popup::lang.form.status_active
+                2: indikator.popup::lang.form.status_inactive
+            default: 1
