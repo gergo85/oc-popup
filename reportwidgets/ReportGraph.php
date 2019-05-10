@@ -30,9 +30,9 @@ class ReportGraph extends ReportWidgetBase
                 'validationMessage' => 'backend::lang.dashboard.widget_title_error'
             ],
             'campaign' => [
-                'title'             => 'indikator.popup::lang.widget.campaign',
-                'default'           => 0,
-                'type'              => 'dropdown'
+                'title'   => 'indikator.popup::lang.widget.campaign',
+                'default' => 0,
+                'type'    => 'dropdown'
             ]
         ];
     }
@@ -82,7 +82,7 @@ class ReportGraph extends ReportWidgetBase
                 else {
                     $date = strtotime('-'.$i.' days');
                 }
-                
+
                 $report = Reports::where('campaign', $campaign->id)->where('year', date('y', $date))->where('month', date('n', $date))->where('day', date('j', $date))->first();
 
                 if (!isset($report['action'])) {

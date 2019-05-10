@@ -31,19 +31,19 @@ class Summary extends ReportWidgetBase
                 'validationMessage' => 'backend::lang.dashboard.widget_title_error'
             ],
             'show_campaigns' => [
-                'title'             => 'indikator.popup::lang.widget.show_campaigns',
-                'default'           => true,
-                'type'              => 'checkbox'
+                'title'   => 'indikator.popup::lang.widget.show_campaigns',
+                'default' => true,
+                'type'    => 'checkbox'
             ],
             'show_abtest' => [
-                'title'             => 'indikator.popup::lang.widget.show_abtest',
-                'default'           => true,
-                'type'              => 'checkbox'
+                'title'   => 'indikator.popup::lang.widget.show_abtest',
+                'default' => true,
+                'type'    => 'checkbox'
             ],
             'show_themes' => [
-                'title'             => 'indikator.popup::lang.widget.show_themes',
-                'default'           => true,
-                'type'              => 'checkbox'
+                'title'   => 'indikator.popup::lang.widget.show_themes',
+                'default' => true,
+                'type'    => 'checkbox'
             ]
         ];
     }

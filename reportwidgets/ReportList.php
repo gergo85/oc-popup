@@ -30,9 +30,9 @@ class ReportList extends ReportWidgetBase
                 'validationMessage' => 'backend::lang.dashboard.widget_title_error'
             ],
             'active' => [
-                'title'             => 'indikator.popup::lang.widget.active',
-                'default'           => true,
-                'type'              => 'checkbox'
+                'title'   => 'indikator.popup::lang.widget.active',
+                'default' => true,
+                'type'    => 'checkbox'
             ]
         ];
     }

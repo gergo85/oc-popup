@@ -147,7 +147,7 @@ class Launch extends ComponentBase
 
             // Theme
             if (ABtest::where(['campaign' => $campaign->id, 'status' => 1])->count() == 0) {
-                $theme = Themes::where('id', $campaign->theme)->first();
+                $theme = Themes::whereId($campaign->theme)->first();
                 $this->page['abtest'] = 'c';
             }
             else {
@@ -156,18 +156,18 @@ class Launch extends ComponentBase
 
                 // No themes
                 if ($abtest->theme_a == 0 && $abtest->theme_b == 0) {
-                    $theme = Themes::where('id', $campaign->theme)->first();
+                    $theme = Themes::whereId($campaign->theme)->first();
                     $this->page['abtest'] = 'c';
                 }
 
                 // Different themes
                 else {
                     if (rand(1, 2) == 1) {
-                        $theme = Themes::where('id', $abtest->theme_a)->first();
+                        $theme = Themes::whereId($abtest->theme_a)->first();
                         $this->page['abtest'] = 'a';
                     }
                     else {
-                        $theme = Themes::where('id', $abtest->theme_b)->first();
+                        $theme = Themes::whereId($abtest->theme_b)->first();
                         $this->page['abtest'] = 'b';
                     }
                 }
@@ -339,13 +339,22 @@ class Launch extends ComponentBase
 
             // Insert subscriber
             \Indikator\News\Models\Subscribers::insertGetId([
-                'name'       => $data['name'],
-                'email'      => $data['email'],
-                'common'     => '',
-                'created'    => 1,
-                'statistics' => 0,
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s')
+                'name'              => $data['name'],
+                'email'             => $data['email'],
+                'common'            => '',
+                'created'           => 1,
+                'statistics'        => 0,
+                'created_at'        => date('Y-m-d H:i:s'),
+                'updated_at'        => date('Y-m-d H:i:s'),
+                'status'            => 3,
+                'locale'            => 'en',
+                'registered_at'     => null,
+                'registered_ip'     => null,
+                'confirmed_at'      => null,
+                'confirmed_ip'      => null,
+                'confirmation_hash' => null,
+                'unsubscribed_at'   => null,
+                'unsubscribed_ip'   => null
             ]);
 
             // Statistics

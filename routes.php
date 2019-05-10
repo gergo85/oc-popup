@@ -22,7 +22,7 @@ App::before(function($request)
             }
 
             // Campaign
-            $campaign = \Indikator\Popup\Models\Campaigns::where('id', $getCampaign)->first();
+            $campaign = \Indikator\Popup\Models\Campaigns::whereId($getCampaign)->first();
 
             // Date range
             if (($campaign->start_at != null && $campaign->start_at > date('Y-m-d H:i:s')) || ($campaign->end_at != null && $campaign->end_at < date('Y-m-d H:i:s'))) {
