@@ -92,16 +92,19 @@ class Plugin extends PluginBase
     {
         return [
             'Indikator\Popup\ReportWidgets\ReportList' => [
-                'label'   => 'indikator.popup::lang.widget.list_label',
-                'context' => 'dashboard'
+                'label'       => 'indikator.popup::lang.widget.list_label',
+                'context'     => 'dashboard',
+                'permissions' => ['indikator.popup.*']
             ],
             'Indikator\Popup\ReportWidgets\ReportGraph' => [
-                'label'   => 'indikator.popup::lang.widget.graph_label',
-                'context' => 'dashboard'
+                'label'       => 'indikator.popup::lang.widget.graph_label',
+                'context'     => 'dashboard',
+                'permissions' => ['indikator.popup.*']
             ],
             'Indikator\Popup\ReportWidgets\Summary' => [
-                'label'   => 'indikator.popup::lang.widget.summary',
-                'context' => 'dashboard'
+                'label'       => 'indikator.popup::lang.widget.summary',
+                'context'     => 'dashboard',
+                'permissions' => ['indikator.popup.*']
             ]
         ];
     }
