@@ -6,8 +6,8 @@ $date = [
     'day'   => date('j')
 ];
 
-$view = \Indikator\Popup\Models\ABtestReports::where(['year' => $date['year'], 'month' => $date['month'], 'day' => $date['day'], 'abtest' => $record->id])->pluck('view_a');
-$action = \Indikator\Popup\Models\ABtestReports::where(['year' => $date['year'], 'month' => $date['month'], 'day' => $date['day'], 'abtest' => $record->id])->pluck('action_a');
+$view   = \Indikator\Popup\Models\ABtestReports::where(['year' => $date['year'], 'month' => $date['month'], 'day' => $date['day'], 'abtest' => $record->id])->value('view_a');
+$action = \Indikator\Popup\Models\ABtestReports::where(['year' => $date['year'], 'month' => $date['month'], 'day' => $date['day'], 'abtest' => $record->id])->value('action_a');
 
 if (!$view) {
     $view = 0;
@@ -16,11 +16,6 @@ if (!$action) {
     $action = 0;
 }
 
-if ($action == 0) {
-    $percent = '0%';
-}
-else {
-    $percent = round($action / $view * 100, 0).'%';
-}
+$percent = ($action == 0) ? '0%' : round($action / $view * 100, 0).'%';
 
 echo $percent.' | '.$view.' | '.$action;

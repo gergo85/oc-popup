@@ -120,6 +120,11 @@ class Launch extends ComponentBase
         // Path
         $url = '/'.Request::path();
 
+        // Home page
+        if ($url == '//') {
+            $url = '/';
+        }
+
         // Loop
         foreach ($campaigns as $campaign) {
             // Date range

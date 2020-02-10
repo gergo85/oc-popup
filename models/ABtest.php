@@ -23,7 +23,7 @@ class ABtest extends Model
     public function getCampaignOptions()
     {
         $result = [];
-        $sql = Campaigns::orderBy('name', 'asc')->get()->all();
+        $sql    = Campaigns::orderBy('name', 'asc')->get()->all();
 
         foreach ($sql as $item) {
             $result[$item->id] = $item->name;
@@ -35,7 +35,7 @@ class ABtest extends Model
     public function getThemeAOptions()
     {
         $result = [0 => trans('indikator.popup::lang.form.none')];
-        $sql = Themes::where('status', 1)->orderBy('name', 'asc')->get()->all();
+        $sql    = Themes::where('status', 1)->orderBy('name', 'asc')->get()->all();
 
         foreach ($sql as $item) {
             $result[$item->id] = $item->name;
@@ -47,7 +47,7 @@ class ABtest extends Model
     public function getThemeBOptions()
     {
         $result = [0 => trans('indikator.popup::lang.form.none')];
-        $sql = Themes::where('status', 1)->orderBy('name', 'asc')->get()->all();
+        $sql    = Themes::where('status', 1)->orderBy('name', 'asc')->get()->all();
 
         foreach ($sql as $item) {
             $result[$item->id] = $item->name;

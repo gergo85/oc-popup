@@ -29,7 +29,7 @@ class Campaigns extends Model
     public function getPagesSelectedOptions()
     {
         $result = [];
-        $pages = Page::sortBy('baseFileName')->all();
+        $pages  = Page::sortBy('baseFileName')->all();
 
         foreach ($pages as $page) {
             $result[$page->url] = $page->title;
@@ -56,7 +56,7 @@ class Campaigns extends Model
     public function getThemeOptions()
     {
         $result = [0 => trans('indikator.popup::lang.form.none')];
-        $sql = Themes::where('status', 1)->orderBy('name', 'asc')->get()->all();
+        $sql    = Themes::where('status', 1)->orderBy('name', 'asc')->get()->all();
 
         foreach ($sql as $item) {
             $result[$item->id] = $item->name;
@@ -67,7 +67,7 @@ class Campaigns extends Model
 
     public function getCampaignListOptions()
     {
-        $result = [0 => trans('indikator.popup::lang.form.none')];
+        $result        = [0 => trans('indikator.popup::lang.form.none')];
         $pluginManager = PluginManager::instance()->findByIdentifier('Responsiv.Campaign');
 
         if ($pluginManager && !$pluginManager->disabled) {
