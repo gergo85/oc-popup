@@ -33,25 +33,29 @@ class Plugin extends PluginBase
                         'label'       => 'indikator.popup::lang.menu.reports',
                         'url'         => Backend::url('indikator/popup/reports'),
                         'icon'        => 'icon-area-chart',
-                        'permissions' => ['indikator.popup.reports']
+                        'permissions' => ['indikator.popup.reports'],
+                        'order'       => 100
                     ],
                     'campaigns' => [
                         'label'       => 'indikator.popup::lang.menu.campaigns',
                         'url'         => Backend::url('indikator/popup/campaigns'),
                         'icon'        => 'icon-television',
-                        'permissions' => ['indikator.popup.campaigns']
+                        'permissions' => ['indikator.popup.campaigns'],
+                        'order'       => 200
                     ],
                     'abtest' => [
                         'label'       => 'indikator.popup::lang.menu.abtest',
                         'url'         => Backend::url('indikator/popup/abtest'),
                         'icon'        => 'icon-balance-scale',
-                        'permissions' => ['indikator.popup.abtest']
+                        'permissions' => ['indikator.popup.abtest'],
+                        'order'       => 300
                     ],
                     'themes' => [
                         'label'       => 'indikator.popup::lang.menu.themes',
                         'url'         => Backend::url('indikator/popup/themes'),
                         'icon'        => 'icon-picture-o',
-                        'permissions' => ['indikator.popup.themes']
+                        'permissions' => ['indikator.popup.themes'],
+                        'order'       => 400
                     ]
                 ]
             ]
