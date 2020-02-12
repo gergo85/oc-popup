@@ -26,7 +26,7 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-comments-o',
                 'iconSvg'     => 'plugins/indikator/popup/assets/img/popup-icon.svg',
                 'permissions' => ['indikator.popup.*'],
-                'order'       => 500,
+                'order'       => 350,
 
                 'sideMenu' => [
                     'reports' => [
