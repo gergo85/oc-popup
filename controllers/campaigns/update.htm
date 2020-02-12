@@ -1,10 +1,6 @@
 <?php
-
-$uri = explode('/', Request::path());
-
-$previous = \Indikator\Popup\Models\Campaigns::where('id', '<', $uri[5])->max('id');
-$next     = \Indikator\Popup\Models\Campaigns::where('id', '>', $uri[5])->min('id');
-
+$prev = \Indikator\Popup\Models\Campaigns::where('id', '<', $formModel->id)->max('id');
+$next = \Indikator\Popup\Models\Campaigns::where('id', '>', $formModel->id)->min('id');
 ?>
 
 <?php Block::put('breadcrumb') ?>
@@ -18,6 +14,22 @@ $next     = \Indikator\Popup\Models\Campaigns::where('id', '>', $uri[5])->min('i
 
     <?php Block::put('form-contents') ?>
 
+        <style type="text/css">
+            .field-datepicker .col-md-6 {
+                float: left;
+                width: 148px;
+            }
+            .field-datepicker .col-md-6:nth-child(2) {
+                width: 112px;
+            }
+            .field-datepicker .icon {
+                top: -2px;
+            }
+            .form-tabless-fields {
+                padding: 0 15px;
+            }
+        </style>
+
         <div class="layout-row min-size">
             <?= $this->formRenderOutsideFields() ?>
         </div>
@@ -25,7 +37,7 @@ $next     = \Indikator\Popup\Models\Campaigns::where('id', '>', $uri[5])->min('i
             <?= $this->formRenderPrimaryTabs() ?>
         </div>
 
-        <div class="form-buttons">
+        <div class="form-buttons" style="padding: 20px 15px;">
             <div class="loading-indicator-container">
                 <button
                     type="submit"
@@ -56,9 +68,9 @@ $next     = \Indikator\Popup\Models\Campaigns::where('id', '>', $uri[5])->min('i
                     title="<?= e(trans('indikator.content::lang.button.next')) ?>">
                 </a>
                 <?php endif ?>
-                <?php if ($previous): ?>
+                <?php if ($prev): ?>
                 <a
-                    href="<?= $previous; ?>"
+                    href="<?= $prev; ?>"
                     class="oc-icon-angle-left btn-icon pull-right"
                     style="font-size: 24px; text-decoration:none"
                     title="<?= e(trans('indikator.content::lang.button.previous')) ?>">

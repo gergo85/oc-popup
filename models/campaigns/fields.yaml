@@ -53,17 +53,22 @@ fields:
         span: left
 
 secondaryTabs:
+
     fields:
 
         start_at:
             label: indikator.popup::lang.form.start_at
             type: datepicker
             mode: datetime
+            span: storm
+            cssClass: col-xs-12
 
         end_at:
             label: indikator.popup::lang.form.end_at
             type: datepicker
             mode: datetime
+            span: storm
+            cssClass: col-xs-12
 
         status:
             label: indikator.popup::lang.form.status
@@ -74,3 +79,5 @@ secondaryTabs:
                 2: indikator.popup::lang.form.status_inactive
                 3: indikator.popup::lang.form.status_test
             default: 1
+            span: storm
+            cssClass: col-xs-12
