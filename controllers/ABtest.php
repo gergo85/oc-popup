@@ -2,6 +2,7 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use Indikator\Popup\Models\Campaigns;
 use Indikator\Popup\Models\ABtest as Item;
 use Flash;
 use Lang;
@@ -25,6 +26,8 @@ class ABtest extends Controller
         parent::__construct();
 
         BackendMenu::setContext('Indikator.Popup', 'popup', 'abtest');
+
+        $this->vars['count'] = Campaigns::count();
     }
 
     public function onActivate()

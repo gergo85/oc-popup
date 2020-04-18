@@ -4,16 +4,6 @@
 
 scopes:
 
-    status_active:
-        label: indikator.popup::lang.form.status_active
-        type: checkbox
-        conditions: status = 1
-
-    status_inactive:
-        label: indikator.popup::lang.form.status_inactive
-        type: checkbox
-        conditions: status = 2
-
     view:
         label: indikator.popup::lang.report.view
         type: numberrange
@@ -23,6 +13,30 @@ scopes:
         label: indikator.popup::lang.report.action
         type: numberrange
         conditions: action >= ':min' and action <= ':max'
+
+    integration:
+        label: indikator.popup::lang.form.integration
+        conditions: integration in (:filtered)
+        options:
+            1: indikator.popup::lang.form.none
+            2: indikator.popup::lang.form.integration_campaign
+            3: indikator.popup::lang.form.integration_news
+
+    theme:
+        label: indikator.popup::lang.form.theme
+        conditions: theme in (:filtered)
+        modelClass: Indikator\Popup\Models\Campaigns
+        options: getThemeOptions
+
+    status_active:
+        label: indikator.popup::lang.form.status_active
+        type: checkbox
+        conditions: status = 1
+
+    status_inactive:
+        label: indikator.popup::lang.form.status_inactive
+        type: checkbox
+        conditions: status = 2
 
     created_date:
         label: indikator.popup::lang.list.created_at

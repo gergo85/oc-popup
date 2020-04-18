@@ -3,6 +3,8 @@
 use System\Classes\PluginBase;
 use Backend;
 use Lang;
+use Indikator\Popup\Models\Campaigns;
+use Indikator\Popup\Controllers\Campaigns as CampaignsControllers;
 
 class Plugin extends PluginBase
 {
@@ -139,5 +141,19 @@ class Plugin extends PluginBase
         return [
             'Indikator\Popup\Components\Launch' => 'launchPopup'
         ];
+    }
+
+    public function boot()
+    {
+        CampaignsControllers::extendListColumns(function($list, $model)
+        {
+            if (!$model instanceof Campaigns) {
+                return;
+            }
+
+            if (Campaigns::where('comment', '!=', '')->count() == 0) {
+                $list->removeColumn('comment');
+            }
+        });
     }
 }

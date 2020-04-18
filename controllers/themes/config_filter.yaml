@@ -4,6 +4,13 @@
 
 scopes:
 
+    style:
+        label: indikator.popup::lang.form.style
+        conditions: style in (:filtered)
+        options:
+            1: indikator.popup::lang.form.style_popup
+            2: indikator.popup::lang.form.style_slide
+
     status_active:
         label: indikator.popup::lang.form.status_active
         type: checkbox

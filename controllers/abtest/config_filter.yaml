@@ -4,6 +4,12 @@
 
 scopes:
 
+    campaign:
+        label: indikator.popup::lang.form.campaign
+        conditions: campaign in (:filtered)
+        modelClass: Indikator\Popup\Models\ABtest
+        options: getCampaignOptions
+
     status_active:
         label: indikator.popup::lang.form.status_active
         type: checkbox
