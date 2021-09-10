@@ -1,0 +1,11 @@
+{
+    "name": "indikator/popup-plugin",
+    "type": "october-plugin",
+    "description": "It contains marketing tools which is used for collecting more subscribers.",
+    "homepage": "https://octobercms.com/plugin/indikator-popup",
+    "keywords": ["october", "octobercms"],
+    "license": "MIT",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
